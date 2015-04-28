@@ -1,13 +1,18 @@
 \chapter{Metodologia}
 
 \begin{itemize}
-	\item Todas as comunidades foram estudadas. As comunidades são divididas em cinco categorias: Tecnologia, Cultura e Recreação, Negócios, Vida e Artes, Profissional e Ciência.
-	\item Foi utilizado o dump disponibilizado pelo StackExchange no Archive.org datado de Setembro de 2014. Falar sobre licensa.
-	\item Nesta sessão irão as hipóteses.
+	\item O material utilizado para esta pesquisa está no github.
+	\item Nesta sessão irão as hipóteses e questões de pesquisa.
 \end{itemize}
 
 \section{Dados Utilizados} % (fold)
 \label{sub:dados_utilizados}
+Os dados utilizados 
+\begin{itemize}
+	\item Foi utilizado o dump disponibilizado pelo StackExchange no Archive.org datado de Setembro de 2014. Falar sobre licensa.
+	\item Todas as comunidades foram estudadas. As comunidades são divididas em cinco categorias: Tecnologia, Cultura e Recreação, Negócios, Vida e Artes, Profissional e Ciência.
+
+\end{itemize}
 
 % section dados_utilizados (end)
 
@@ -15,7 +20,16 @@
 \label{sub:classificador_de_g_nero}
 \begin{itemize}
 	\item Colocar exemplos de inferência de gênero utilizando o classificador automático;
-	\item
+	\item Não há identificação de gênero no perfil do usuário no StackExchange, então o gênero precisa ser inferido;
+	\item São estudados aqui apenas os usuários ativos e aqueles que podemos facilmente identificar seu 
+	\item As principais atividades de um usuário nestes sites são: comentar, perguntar e responder;
+	\item Durante a participação de um usuário nas atividades principais, só é possível identificar o gênero do seu colega por dois meios: foto ou nome;
+	\item resolvemos usar seu nome para identificar o gênero dos usuários.
+	\item Previous research shows that for people with western names, assessing sex based on the first name of an individual is accurate in social networks -- both those which require real names~\cite{tang2011s} and those which don't~\cite{burger2011discriminating}\cite{liu2013s}. 
+	\item descrever como funciona o método de identificação de gênero
+	\item falar sobre o Global Name Data
+	\item justificar porque essa amostra é representativa
+	\item tabela ou texto sobre proporção identificada nas comunidades.
 \end{itemize}
 
 % section classificador_de_g_nero (end)
@@ -23,20 +37,73 @@
 \section{Contribuições em Número} % (fold)
 \label{sub:contribui_es_em_numero}
 
+The first question is: \textit{Does the amount of contribution from the two genders significantly differ?}
+This question is addresses the three central types of contribution in the StackExchange platform: questions, answers and comments. And, also, the sum of them. The hypotheses tested are:
+    
+\begin{itemize}
+    \item \textit{H1$_0$: The median number of questions a user posts is the same for the two genders.}
+    \item \textit{H2$_0$: The median number of answers a user posts is the same for the two genders.}
+    \item \textit{H3$_0$: The median number of comments a user posts is the same for the two genders.}
+    \item \textit{H3$_0$: The median number of total contributions from a user is the same for the two genders.}
+\end{itemize}
+
 % section contribui_es_em_numero (end)
 
 \section{Qualidade} % (fold)
 \label{sub:qualidade}
+
+Our second question is: \textit{Are contributions from different genders perceived to have different quality levels by the community?}. This question deals with the fact that women may contribute less because their contributions are less appreciated and that may be felt as a failure, discouraging further contributions. 
+% TODO: essa frase merece uma reescrita
+Each content created in StackExchange possesses a measure of its quality as perceived by the community created by the collective feedback the community gives through up and down votes. 
+
+We use the score created through this voting to measure the quality of each user's answers and questions. The voting score of comments was not considered, as their quality is less objective and instrumental in the site. 
+
+A user's quality in creating questions is defined as the mean of all scores of all questions the user created, or zero in case the user has created no questions. For answers, two metrics are used: first, the \emph{Accepted Rate}, which measures the proportion of answers of users that were chosen as the best answer by the questioner. The second metric is the  \emph{Mean Utility of Answers}, as proposed by Furtado et al.~\cite{furtado2013contributor}, which averages the standardized score of votes answers by a user received compared to competing answers in the same questions. For both answer quality metrics, only users that provided at least one answer are considered.
+
+The hypotheses considering quality of contributions are thus:
+
+\textit{H1$_0$: The mean of the scores of the questions made by each user doesn't change between genders.}
+
+\textit{H2$_0$: Both genders have the same answer acceptance rate.}
+
+\textit{H3$_0$: The mean utility of the answers from a user is the same between genders.}
 
 % section qualidade (end)
 
 \section{Dedicação} % (fold)
 \label{sub:dedica_o}
 
+% Parágrafo abaixo pode ser melhor escrito
+Among the various meanings that the expression "engagement" can relate to, in this study we use it to define the effort put by a user in the system over time. We measure engagement both in terms of the total timespan during which the user was contributing to a site and as the frequency of contributions during this period. 
+
+Using these definitions, our final question is: \textit{Is the engagement of men and women, with those communities significantly different?} 
+% Mais coisa que pode ser reescrita porque faz sentido algum
+Note that this step is necessary to further understand differences or similarities in the contribution behavior of women and men. Otherwise, if there is a difference in total contribution between the genders, it would not be possible to know whether this happens because men/women leave earlier or have lower contribution rates. Additionally, understanding whether women are led to leave the community sooner than men can shed light on exclusion phenomena. 
+
+The lifetime of a user is the difference from the first day of activity and the last. As a question (followed by it's answers) can be transferred between communities\footnote{http://meta.stackexchange.com/questions/2683/move-questions-between-stack-exchange-sites} we define the first day of activity as the most recent date between the user's join date and the first contribution's date on the community in question. This avoids taking into account the time between the original transferred question's date and the user's join date, as this time the user can't be active in the community. We also define that a user has become inactive in a community after the user is not active for a period larger than the death interval for the community. This interval, measured in days, is calculated as the following: for each user, we take the largest interval between two contributions by this user. The death interval is the average of this measure for all users.
+
+The frequency of participation is the second metric used in this question, and it is defined as the amount of contributions made by a user (question, answer or comment) divided by the amount of days in which the user was active. Opposed to our lifetime metric, here we only take into account the days in which the user made any kind of contribution. Our resulting hypotheses are:
+
+\textit{H1$_0$: The lifetime of users is the same between genders.}
+
+\textit{H2$_0$: The frequency of participation is the same between genders.}
+
 % section dedica_o (end)
 
 \section{Contribuições e Cadastros ao Longo do Tempo} % (fold)
 \label{sub:contribui_es_e_cadastros_ao_longo_do_tempo}
+For this research question we want to verify if the lack of female contribution is something new on these communities. Or even if there are any patterns of rise or fall of contributions over time. In other words, we want to answer the following question: \textit{Do the proportion of contributions by each gender change over time ?} Also, we investigated if there are any trends on registrations by each gender, answering the following question: \textit{Do the proportion of registrations by each gender change over time ?}
 
+\textit{H1$_0$: The proportion of contributions by men and women hasn't changed over time.}
+
+\textit{H2$_0$: The proportion of registrations by men and women hasn't changed over time.}
 % section contribui_es_e_cadastros_ao_longo_do_tempo (end)
 
+\section{Variable distributions}
+\label{sub:distributions}
+\begin{itemize}
+	\item Simples justificativa por que cada teste é usado em cada hiposese
+	\item Aqui havia uma tabela com o sumarize de cada métrica em cada comunidade. Acho que não é viável fazer isso aqui, mas é importante citar, para poder  justificar mann whitneey e ouutros testes.
+	\item summary das variáveis
+\end{itemize}
+% Our metrics are summarized in Table \ref{tab:summary}. Most of our metrics have highly skewed distributions. The observation that these are non-normal distributions leads to the use of Mann-Whitney two sample tests for answering all hypotheses but the one regarding lifetime. For testing if men and women have different lifetime lengths, a survival analysis along with a LogRank test were employed.
