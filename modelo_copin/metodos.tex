@@ -1,3 +1,4 @@
+%!TEX root = main_mestrado.tex
 \chapter{Metodologia}
 
 \begin{itemize}
@@ -52,6 +53,8 @@ This question is addresses the three central types of contribution in the StackE
 \section{Qualidade} % (fold)
 \label{sub:qualidade}
 
+\textbf{Obs.:} As comunidades ham, startups e poker foram removidas da Q2 por não ter atividade suficiente por parte das mulheres (0). São comunidades atípicas. Nenhuma mulher fez pergunta, ou só uma mulher postou resposta. Ham e startups são comunidades novas.
+
 Our second question is: \textit{Are contributions from different genders perceived to have different quality levels by the community?}. This question deals with the fact that women may contribute less because their contributions are less appreciated and that may be felt as a failure, discouraging further contributions. 
 % TODO: essa frase merece uma reescrita
 Each content created in StackExchange possesses a measure of its quality as perceived by the community created by the collective feedback the community gives through up and down votes. 
@@ -92,6 +95,11 @@ The frequency of participation is the second metric used in this question, and i
 
 \section{Contribuições e Cadastros ao Longo do Tempo} % (fold)
 \label{sub:contribui_es_e_cadastros_ao_longo_do_tempo}
+
+\begin{itemize}
+	\item Comunidades com menos de 14 meses foram retiradas porque a regressão estava dando errado (NaN). Acredito que por que foram separados em semestres e 2 semestres (ou 2 pontos) era muito pouco para a regressão
+\end{itemize}
+
 For this research question we want to verify if the lack of female contribution is something new on these communities. Or even if there are any patterns of rise or fall of contributions over time. In other words, we want to answer the following question: \textit{Do the proportion of contributions by each gender change over time ?} Also, we investigated if there are any trends on registrations by each gender, answering the following question: \textit{Do the proportion of registrations by each gender change over time ?}
 
 \textit{H1$_0$: The proportion of contributions by men and women hasn't changed over time.}
