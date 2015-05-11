@@ -1,0 +1,20 @@
+lifetime_difference_median,lifetime_pvalue,category,community,age (months)
+-346.87428,2.50E-69,technology,stackoverflow,76.00
+-327.759879,9.22E-07,science,mathoverflow,62.00
+-215.047721,1.71E-03,technology,tridion,21.00
+-70.928687,2.55E-03,technology,superuser,64.00
+-35.290989,4.19E-02,technology,serverfault,67.00
+-22.549983,3.59E-03,culture-recreation,homebrew,48.00
+-17.150387,1.71E-03,technology,dsp,39.00
+-14.504535,3.29E-04,technology,apple,51.00
+-12.619026,9.25E-03,life-arts,diy,52.00
+-9.046545,3.14E-03,culture-recreation,english,51.00
+-8.804869,1.76E-05,life-arts,scifi,46.00
+-7.260233,3.09E-02,technology,networkengineering,18.00
+-6.876311,1.82E-02,professional,aviation,11.00
+-6.417729,1.80E-02,culture-recreation,mechanics,44.00
+-4.983799,3.95E-03,life-arts,photo,52.00
+-3.829913,6.46E-03,culture-recreation,poker,34.00
+-1.919741,5.70E-03,culture-recreation,travel,41.00
+-1.663282,2.13E-02,science,philosophy,41.00
+74.715491,1.65E-02,technology,wordpress,51.00
