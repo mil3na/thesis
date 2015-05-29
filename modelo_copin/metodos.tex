@@ -1,21 +1,18 @@
 %!TEX root = main_mestrado.tex
 \chapter{Metodologia}
 
-%!TEX root = proceedings.tex
-\section{Metodologia} % (fold)
-\label{sec:methods}
-
 Esta sessão detalha os dados e métodos utilizadas para medir quantidade, qualidade e frequência das contribuições dos usuários, assim como o compromisso dos usuários com a comunidade. Aqui também explicaremos como identificamos os gêneros dos usuários. Todo o código utilizado neste experimento pode ser encontrado em um repositório no Github\footnote{URL anonymized for submission}. 
 
-\subsection{Dados utilizados}
+\section{Dados utilizados}
 
-A principio, nossa intenção era estudar todas as comunidades do StackExchange em seu último dump de Setembro de 2014. Contudo, foi detectado que algumas comunidades não possuíam atividades suficientes, por parte das mulheres, para serem analisadas. Portanto, estudamos todas as comunidades do StackExchange, presentes no dump de Setembro de 2014, que tenham 18 ou mais meses de idade, mais a comunidade "poker". A lista de comunidades estudadas pode ser encontrada aqui\footnote{colocar uma tabela? ou algo assim}.
+A principio, nossa intenção era estudar todas as comunidades do StackExchange em seu último dump de Setembro de 2014. Contudo, foi detectado que algumas comunidades não possuíam atividades suficientes, por parte das mulheres, para serem analisadas. Portanto, estudamos todas as comunidades do StackExchange, presentes no dump de Setembro de 2014, que tenham 18 ou mais meses de idade, mais a comunidade "poker". A lista de comunidades estudadas pode ser encontrada aqui\footnote{colocar uma tabela? ou algo assim}. Mais ainda, apenas os usuários que tenham feito algum tipo de contribuição e têm, no mínimo, 50 pontos de reputação foram estudados. Esta limitação é para garantir que estudamos usuários que estiveram ativos em algum momento na comunidade estudada.
 
 As informações utilizadas neste estudo foram obtidas no dump trimestral\footnote{https://archive.org/details/stackexchange} oferecido pelo StackExchange. O grupo costuma publicar regularmente todos os dados de todos os seus sites que não contenham informações privadas do usuário (e.g. e-mail). Tais dados incluem perguntas, respostas e comentários postados pelos usuários, assim como os votos (positivos e negativos) recebidos por cada tipo de post. O dump também contém a reputação de cada usuário em cada comunidade. 
 
-Utilizamos os dados de todas as comunidades estudadas, desde o seu início até Setembro de 2014. Tais comunidades são dividas em seis categorias: Technology, Culture/Recreation, Life/Arts, Science, Business e Professional. %A intenção é comparar o comportamento dos usuários das comunidades de Technology e Science com as demais.
+Utilizamos os dados de todas as comunidades estudadas, desde o seu início até Setembro de 2014. Tais comunidades são dividas em seis categorias: Technology, Culture/Recreation, Life/Arts, Science, Business e Professional.
+%TODO:A intenção é comparar o comportamento dos usuários das comunidades de Technology e Science com as demais.
 
-\subsection{Inferindo o gênero dos usuários}
+\section{Inferindo o gênero dos usuários}
 
 Os perfis do StackExchange não possuem explicitamente o gênero de cada usuário, já que a plataforma não pede para que o usuário forneça esta informação no seu perfil. Mais ainda, o site não exige que os usuários preencham seu nome verdadeiro. Sendo assim impossível identificar o gênero de cada usuário automaticamente, com precisão. Já que nosso objetivo neste estudo é apenas investigar o efeito de um usuário, explicitamente, manifestar seu gênero, decidimos focar apenas naqueles usuários que têm a intenção de identificar seu gênero nestas comunidades.
 
@@ -29,15 +26,15 @@ Com este método, conseguimos identificar, em média, 37\% dos usuários (mínim
 % It is worthwhile to note that users with western names are likely overrepresented in this sample. Nevertheless, given that a large proportion of StackExchange users are from western countries~\cite{schenk2013geo}, this sample is still likely representative of a large portion of the sites we study. 
 
 
-\subsection{Variáveis}
+\section{Variáveis}
 
 Por motivos de espaço, um sumário de nossas métricas podem ser encontrado aqui\footnote{URL anonymized for submission}. A maioria delas possuem uma distribuição bastante enviesada e com certeza não normal. Portanto, utilizamos testes não paramétricos. Para todas as hipóteses da primeira e segunda pergunta, mais a segunda hipótese da terceira pergunta, foi utilizado o teste Mann-Whitney. Para testar se homens e mulheres possuem um tempo de vida divergente na comunidade utilizamos a \textit{Survival Analysis} junto com um teste de LogRank. Já para a quarta pergunta tomamos a proporção de contribuição e registros feitos por cada grupo de gênero, a cada seis meses, e verificamos se esta proporção aumenta ou não, com a ajuda de uma regressão utilizando o método dos mínimos quadrados.
 
-\subsection{Medindo contribuições}
+\section{Medindo contribuições}
 
 A questão principal do nosso estudo é esclarecer o quão diferente é a participação de homens e mulheres em comunidades de perguntas e respostas, comparando àquelas relacionadas a STEM (pertencentes às categorias Technology e Science) com as demais. Para responder esta questão, nós à dividimos em quatro perguntas mais específicas.
 
-\subsubsection{Número de contribuições}
+\subsection{Número de contribuições}
 
 Nossa primeira pergunta é: \textit{O número de contribuições feitas por homens e por mulheres difere significantemente?} Esta pergunta é relacionada aos três tipos principais de contribuição na plataforma StackExchange: perguntas, respostas e comentários, além da soma de todas. As hipóteses testadas são:
 
@@ -48,7 +45,7 @@ Nossa primeira pergunta é: \textit{O número de contribuições feitas por home
     \item \textit{H4$_0$: O número de contribuições dos usuários de ambos os gêneros pertencem à mesma distribuição.}
 \end{itemize}
 
-\subsubsection{Qualidade}
+\subsection{Qualidade}
 
 O controle de qualidade das perguntas e respostas na plataforma StackExchange é feito pela própria comunidade através do sistema de votos. Usuários com uma determinada reputação podem votar "para cima" e "para baixo", caso considerem o post como uma boa ou má contribuição, respectivamente. Esses votos geram pontos, positivos ou negativos, que, dentre outros fatores, formam a reputação de um usuário. 
 
@@ -66,7 +63,7 @@ As hipóteses que consideram a qualidade do conteúdo do usuário são as seguin
     \item \textit{H3$_0$: A mean utility dos usuários de ambos os gêneros pertencem à mesma distribuição.}
 \end{itemize}
 
-\subsubsection{Engajamento}
+\subsection{Engajamento}
 
 Neste estudo, usamos a definição de engajamento a qual o descreve como o esforço de um usuário ao longo do tempo. Nós medimos engajamento tanto em relação ao tempo total que o usuário permanece na comunidade (seu tempo de vida) quanto sua frequência de contribuição durante seu tempo de atividade.
 
@@ -81,7 +78,7 @@ A frequência de participação, segunda métrica usada nesta pergunta, é defin
     \item \textit{H2$_0$: A frequência de participação dos usuários de ambos os gêneros pertencem à mesma distribuição.}
 \end{itemize}
 
-\subsubsection{Contribuições e registros ao longo do tempo}
+\subsection{Contribuições e registros ao longo do tempo}
 
 Para esta pergunta, queremos verificar se a falta de contribuição por parte das mulheres é algo novo nestas comunidades, ou ainda se existem padrões de contribuição ao longo do tempo, seja de aumento ou diminuição. Em outras palavras, nós queremos responder à seguinte pergunta: \textit{A proporção de contribuições feitas por usuários de cada gênero tem aumentado?}. Nós também investigamos se existe alguma tendência no número de registros feito por cada gênero, respondendo à seguinte pergunta: \textit{A proporção de registros feitos por usuários de cada gênero tem aumentado?}
 
@@ -91,6 +88,7 @@ Para esta pergunta, queremos verificar se a falta de contribuição por parte da
 \end{itemize}
 
 % section methods (end)
+
 
 
 % \begin{itemize}
