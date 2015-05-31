@@ -1,211 +1,102 @@
 %!TEX root = main_mestrado.tex
 \chapter{Metodologia}
 
-Esta sessão detalha os dados e métodos utilizadas para medir quantidade, qualidade e frequência das contribuições dos usuários, assim como o compromisso dos usuários com a comunidade. Aqui também explicaremos como identificamos os gêneros dos usuários. Todo o código utilizado neste experimento pode ser encontrado em um repositório no Github\footnote{URL anonymized for submission}. 
+Este capítulo detalha os dados e métodos utilizadas para medir quantidade, qualidade e frequência das contribuições dos usuários, assim como o compromisso dos usuários com a comunidade. Aqui também explicaremos como identificamos os gêneros dos usuários. Todo o código utilizado neste experimento pode ser encontrado em um repositório no Github\footnote{https://github.com/mil3na/gender-study-final}. 
 
 \section{Dados utilizados}
 
-A principio, nossa intenção era estudar todas as comunidades do StackExchange em seu último dump de Setembro de 2014. Contudo, foi detectado que algumas comunidades não possuíam atividades suficientes, por parte das mulheres, para serem analisadas. Portanto, estudamos todas as comunidades do StackExchange, presentes no dump de Setembro de 2014, que tenham 18 ou mais meses de idade, mais a comunidade "poker". A lista de comunidades estudadas pode ser encontrada aqui\footnote{colocar uma tabela? ou algo assim}. Mais ainda, apenas os usuários que tenham feito algum tipo de contribuição e têm, no mínimo, 50 pontos de reputação foram estudados. Esta limitação é para garantir que estudamos usuários que estiveram ativos em algum momento na comunidade estudada.
+Nosso estudo usa dados de todas as comunidades do StackExchange em seu último dump de Setembro de 2014. Contudo. Contudo, para que fosse possível realizar a análise, tivemos que remover  algumas comunidades que  não possuíam atividades suficientes, por parte das mulheres, para serem analisadas. Como comunidades muito novas não apresentavam dados suficientes para serem estudados, removemos da nossa pesquisa todas as comunidades do StackExchange, presentes no dump de Setembro de 2014, que tenham menos de 18 meses de idade, além de comunidades que não tinham um número razoável de mulheres. A lista das 85 comunidades estudadas pode ser encontrada aqui~\ref{table:communities}. Mais ainda, apenas os usuários que tenham feito algum tipo de contribuição e têm, no mínimo, 50 pontos de reputação foram estudados. Esta limitação é para garantir que estudamos usuários que estiveram ativos em algum momento na comunidade estudada.
 
-As informações utilizadas neste estudo foram obtidas no dump trimestral\footnote{https://archive.org/details/stackexchange} oferecido pelo StackExchange. O grupo costuma publicar regularmente todos os dados de todos os seus sites que não contenham informações privadas do usuário (e.g. e-mail). Tais dados incluem perguntas, respostas e comentários postados pelos usuários, assim como os votos (positivos e negativos) recebidos por cada tipo de post. O dump também contém a reputação de cada usuário em cada comunidade. 
+\begin{table*}[ht]
+% \begin{tabular}{@{}ccccc@{}}
+\small
+\centering
+\begin{tabular}{p{0.13\linewidth}p{0.16\linewidth}p{0.15\linewidth}p{0.14\linewidth}p{0.14\linewidth}p{0.10\linewidth}}
+\toprule
+\multicolumn{6}{c}{Comunidades Estudadas}               \\ [2pt] \midrule
+academia     & cooking          & french        & magento      & productivity & spanish       \\ [2pt]
+android      & crypto           & gamedev       & math         & programmers  & sqa           \\ [2pt]
+anime        & cs               & gaming        & mathematica  & quant        & stackapps     \\ [2pt]
+apple        & cstheory         & gardening     & mathoverflow & raspberrypi  & stackoverflow \\ [2pt]
+askubuntu    & dba              & genealogy     & mechanics    & rpg          & stats         \\ [2pt]
+bicycles     & diy              & german        & money        & russian      & superuser     \\ [2pt]
+biology      & drupal           & gis           & movies       & salesforce   & tex           \\ [2pt]
+bitcoin      & dsp              & graphicdesign & music        & scicomp      & travel        \\ [2pt]
+chemistry    & electronics      & hermeneutics  & outdoors     & scifi        & unix          \\ [2pt]
+chinese      & ell              & history       & parenting    & security     & ux            \\ [2pt]
+christianity & english          & islam         & philosophy   & serverfault  & webapps       \\ [2pt]
+codegolf     & expressionengine & japanese      & photo        & sharepoint   & webmasters    \\ [2pt]
+codereview   & fitness          & judaism       & physics      & skeptics     & wordpress     \\ [2pt]
+cogsci       & freelancing      & linguistics   & pm           & sound        & workplace     \\ [2pt]
+\multicolumn{6}{l}{writers}       \\ [2pt]
+\bottomrule
+\end{tabular}
+\caption[Lista de comunidades estudadas]{Lista das comunidades do StackExchange estudadas nesta pesquisa.}~\label{table:communities}
+\end{table*}
 
-Utilizamos os dados de todas as comunidades estudadas, desde o seu início até Setembro de 2014. Tais comunidades são dividas em seis categorias: Technology, Culture/Recreation, Life/Arts, Science, Business e Professional.
+As informações utilizadas neste estudo foram obtidas no dump trimestral\footnote{https://archive.org/details/stackexchange} oferecido pelo StackExchange. O grupo costuma publicar regularmente todos os dados de todos os seus sites que não contenham informações privadas do usuário (e.g. e-mail). Tais dados incluem perguntas, respostas e comentários postados pelos usuários, assim como os votos (positivos e negativos) recebidos por cada tipo de post. O dump também contém a reputação de cada usuário em cada comunidade. As comunidades presentes nestes dados são classificadas pelo StackExchange dentre estas seis categorias: Technology, Culture/Recreation, Life/Arts, Science, Business e Professional.
 %TODO:A intenção é comparar o comportamento dos usuários das comunidades de Technology e Science com as demais.
 
 \section{Inferindo o gênero dos usuários}
 
-Os perfis do StackExchange não possuem explicitamente o gênero de cada usuário, já que a plataforma não pede para que o usuário forneça esta informação no seu perfil. Mais ainda, o site não exige que os usuários preencham seu nome verdadeiro. Sendo assim impossível identificar o gênero de cada usuário automaticamente, com precisão. Já que nosso objetivo neste estudo é apenas investigar o efeito de um usuário, explicitamente, manifestar seu gênero, decidimos focar apenas naqueles usuários que têm a intenção de identificar seu gênero nestas comunidades.
+Os perfis do StackExchange não possuem explicitamente o gênero de cada usuário, já que a plataforma não exige do usuário esta informação no seu perfil. Sendo assim impossível identificar o gênero de cada usuário automaticamente, com precisão. Já que nosso objetivo neste estudo é apenas investigar o efeito de um usuário, explicitamente, manifestar seu gênero, decidimos focar apenas naqueles usuários que têm a intenção de identificar seu gênero nestas comunidades.
 
-Claramente, este tipo de comunidade online possui três tipos de atividades principais: perguntar, responder e comentar. Durante a participação de um usuário nas atividades principais, só é possível identificar o gênero do seu colega por dois meios: sua foto ou nome de usuário. Utilizamos o nome de usuário para identificar o gênero do mesmo, visto que pesquisas anteriores mostram que, para pessoas com nomes ocidentais, inferir o gênero de uma pessoa através de sue primeiro nome é um método acurado tanto para redes sociais que requerem o nome real do usuário~\cite{tang2011s}, quanto para as que não o requerem~\cite{burger2011discriminating}\cite{liu2013s}.
+As comunidades do StackExchange possuem três tipos de atividades principais: perguntar, responder e comentar. Durante a participação de um usuário nas atividades principais, só é possível identificar o gênero do seu colega por dois meios: sua foto ou nome de usuário. Utilizamos o nome de usuário para identificar o gênero do mesmo. Sabe-se que a maioria dos usuários do StackExchange vêm de países ocidentais, provavelmente tendo nomes típicos ocidentais~\cite{schenk2013geo}, e pesquisas anteriores mostram que, para pessoas com nomes ocidentais, inferir o gênero de uma alguém através de sue primeiro nome é um método acurado tanto para redes sociais que requerem o nome real do usuário~\cite{tang2011s}, quanto para as que não o requerem~\cite{burger2011discriminating,liu2013s}.
 
-Nosso método de inferência de gênero é similar ao encontrado ~\cite{liu2013s} e \cite{cunha2014he}. Nós utilizamos o Global Name Data~\cite{Hyland:2013:Online}, que é um banco de dados de nomes baseado em registros de nascimentos nos Estados Unidos e Reino Unido, e que contém mais de 100,000 nomes únicos. Com este banco de dados fizemos um classificador que categoriza os usuários em três classes baseado na contagem de frequência probabilística nos rótulos "Feminino", "Masculino" e "Desconhecido". Cada rótulo indica se a maioria das pessoas catalogadas com um certo nome é Homem ou Mulher. O gênero de um nome é considerado Desconhecido se não há diferença estatística entre a proporção de homens e mulheres catalogados com este nome. Nossa análise só leva em consideração aqueles usuários que possuem nomes os quais é possível inferir com confiança o gênero, de acordo com este método.
+Nosso método de inferência de gênero é similar ao encontrado em Liu et al.~\cite{liu2013s} e Cunha et al.~\cite{cunha2014he}. Nós utilizamos o Global Name Data~\cite{Hyland:2013:Online}, um banco de dados de nomes baseado em registros de nascimentos nos Estados Unidos e Reino Unido, que contém mais de 100,000 nomes únicos e a frequência com que cada nome é associado a um menino ou menina. Com este banco de dados fizemos um classificador que categoriza os usuários em três classes: Feminino, Masculino e Desconhecido, baseado na contagem de frequência probabilística de cada nome. Um usuário é classificado como Masculino se existir uma proporção significantemente maior de meninos registrados com esse nome, segundo o Global Name Data. O gênero de um nome é considerado Desconhecido caso não haja diferença estatística entre a proporção de homens e mulheres catalogados com este nome. Nossa análise só leva em consideração aqueles usuários que possuem nomes os quais é possível inferir com confiança o gênero, de acordo com este método. Com este método, conseguimos identificar, em média, 37\% dos usuários (mínimo: 27\%, máximo: 52\%) dos usuários das comunidades estudadas. Sendo sua grande maioria homens: em média, 93\% são homens (mínimo: 74\%, máximo: 98\%). A Tabela \ref{table:categories} apresenta a média de usuários identificados por gênero, em cada categoria.
 
-Com este método, conseguimos identificar, em média, 37\% dos usuários (mínimo: 27\%, máximo: 52\%) dos usuários das comunidades estudadas. Sendo sua grande maioria homens: em média, 93\% são homens (mínimo: 74\%, máximo: 98\%).
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}rlllr@{}}
+\toprule
+{\small\textit{Categoria}} & {\small \textit{Comunidades}} & {\small \textit{Mulheres}} & {\small \textit{Homens}} & {\small \textit{Idade (meses)}} \\ \midrule
+business           & 3  & 31  & 609  & 43 \\
+culture-recreation & 21 & 68  & 893  & 39 \\
+life-arts          & 15 & 92  & 1046 & 44 \\
+professional       & 2  & 81  & 800  & 25 \\
+science            & 12 & 148 & 1987 & 43 \\
+technology         & 32 & 476 & 8240 & 47 \\ \bottomrule
+\end{tabular}
+\caption[Média de usuários identificados por categoria]{A média da quantidade de homens e mulheres identificados em cada categoria, o número de comunidades por categoria e a média das idades das comunidades de cada categoria, em meses.}~\label{table:categories}
+\end{table}
 
-% TODO: Não sei se devo colocar o parágrafo abaixo. 
-% It is worthwhile to note that users with western names are likely overrepresented in this sample. Nevertheless, given that a large proportion of StackExchange users are from western countries~\cite{schenk2013geo}, this sample is still likely representative of a large portion of the sites we study. 
-
-
-\section{Variáveis}
-
-Por motivos de espaço, um sumário de nossas métricas podem ser encontrado aqui\footnote{URL anonymized for submission}. A maioria delas possuem uma distribuição bastante enviesada e com certeza não normal. Portanto, utilizamos testes não paramétricos. Para todas as hipóteses da primeira e segunda pergunta, mais a segunda hipótese da terceira pergunta, foi utilizado o teste Mann-Whitney. Para testar se homens e mulheres possuem um tempo de vida divergente na comunidade utilizamos a \textit{Survival Analysis} junto com um teste de LogRank. Já para a quarta pergunta tomamos a proporção de contribuição e registros feitos por cada grupo de gênero, a cada seis meses, e verificamos se esta proporção aumenta ou não, com a ajuda de uma regressão utilizando o método dos mínimos quadrados.
-
-\section{Medindo contribuições}
+\section{Medindo contribuições e engajamento}
 
 A questão principal do nosso estudo é esclarecer o quão diferente é a participação de homens e mulheres em comunidades de perguntas e respostas, comparando àquelas relacionadas a STEM (pertencentes às categorias Technology e Science) com as demais. Para responder esta questão, nós à dividimos em quatro perguntas mais específicas.
 
 \subsection{Número de contribuições}
 
-Nossa primeira pergunta é: \textit{O número de contribuições feitas por homens e por mulheres difere significantemente?} Esta pergunta é relacionada aos três tipos principais de contribuição na plataforma StackExchange: perguntas, respostas e comentários, além da soma de todas. As hipóteses testadas são:
-
-\begin{itemize}
-    \item \textit{H1$_0$: O número de perguntas dos usuários de ambos os gêneros pertencem à mesma distribuição.}
-    \item \textit{H2$_0$: O número de respostas dos usuários de ambos os gêneros pertencem à mesma distribuição.}
-    \item \textit{H3$_0$: O número de comentários dos usuários de ambos os gêneros pertencem à mesma distribuição.}
-    \item \textit{H4$_0$: O número de contribuições dos usuários de ambos os gêneros pertencem à mesma distribuição.}
-\end{itemize}
+Nossa primeira pergunta é: \textit{O número de contribuições feitas por homens e por mulheres difere significantemente nas comunidades observadas?} Esta pergunta é relacionada aos três tipos principais de contribuição na plataforma StackExchange: perguntas, respostas e comentários, além da soma de todas.
 
 \subsection{Qualidade}
 
 O controle de qualidade das perguntas e respostas na plataforma StackExchange é feito pela própria comunidade através do sistema de votos. Usuários com uma determinada reputação podem votar "para cima" e "para baixo", caso considerem o post como uma boa ou má contribuição, respectivamente. Esses votos geram pontos, positivos ou negativos, que, dentre outros fatores, formam a reputação de um usuário. 
 
-Tendo em vista o parágrafo acima, a nossa segunda pergunta é: \textit{As contribuições feitas por diferentes gêneros são vistas, pela comunidade, com níveis de qualidade diferentes?} Esta pergunta se refere ao fato de que mulheres podem estar contribuindo menos porque suas contribuições não são bem vindas, fazendo com que elas sintam que falharam e as desencorajando de continuar participando. 
+Tendo em vista o processo de avaliação de qualidade descrito acima, a nossa segunda pergunta é: \textit{As contribuições feitas por diferentes gêneros são vistas, pela comunidade, com níveis de qualidade diferentes?} Caso exista uma avaliação negativa indiscriminada das contribuições vindas de mulheres, elas podem estar contribuindo menos porque suas contribuições não são bem vindas, fazendo com que elas sintam que falharam e as desencorajando de continuar participando. 
 
-Utilizamos a pontuação criada pelo sistema de votos para medir a qualidade das perguntas e respostas de cada usuário. A qualidade das perguntas de um usuário é definida como a média da pontuação de todas as perguntas feitas pelo usuário, ou zero, caso o usuário tenha postado nenhuma pergunta. Para respostas, utilizamos duas métricas: a primeira é o \emph{Accepted Rate} que mede a proporção de respostas do usuário que foram aceitas como melhor resposta pelo interrogador. A segunda é a \emph{Mean Utility of Answers}, proposta por Furtado et al.~\cite{furtado2013contributor}. Esta métrica é "averages the standardized score of votes answers by a user received compared to competing answers in the same questions". Para ambas as métricas para respostas, apenas usuários com pelo menos uma resposta são levados em consideração.
-
-% TODO: traduzir o significado de mean utility.
-
-As hipóteses que consideram a qualidade do conteúdo do usuário são as seguintes:
-
-\begin{itemize}
-    \item \textit{H1$_0$: A média da pontuação das perguntas de cada usuário, de ambos os gêneros, segue a mesma distribuição.}
-    \item \textit{H2$_0$: O accepted rate dos usuários de ambos os gêneros pertencem à mesma distribuição.}
-    \item \textit{H3$_0$: A mean utility dos usuários de ambos os gêneros pertencem à mesma distribuição.}
-\end{itemize}
+Utilizamos a pontuação criada pelo sistema de votos para medir a qualidade das perguntas e respostas de cada usuário. A qualidade das perguntas de um usuário é definida como a média da pontuação de todas as perguntas feitas pelo usuário, ou zero, caso o usuário tenha contribuído com nenhuma pergunta. Para respostas, utilizamos duas métricas: a primeira é a taxa de aceitação que mede a proporção de respostas do usuário que foram aceitas como melhor resposta pelo interrogador. A segunda é a utilidade média das respostas, proposta por Furtado et al.~\cite{furtado2013contributor}. Esta métrica é a média da normalização do saldo de votos das respostas de um usuário comparado com outras respostas à mesma pergunta. Para ambas as métricas para respostas, apenas usuários com pelo menos uma resposta são levados em consideração.
 
 \subsection{Engajamento}
 
 Neste estudo, usamos a definição de engajamento a qual o descreve como o esforço de um usuário ao longo do tempo. Nós medimos engajamento tanto em relação ao tempo total que o usuário permanece na comunidade (seu tempo de vida) quanto sua frequência de contribuição durante seu tempo de atividade.
 
-Levando em consideração estas definições, nossa terceira pergunta é: \textit{O engajamento de homens e mulheres difere nestas comunidades?} É importante notar que caso haja diferença no hábito de contribuição entre homens e mulheres, podemos verificar se usuários de algum dos gêneros deixam a comunidade mais cedo ou têm uma taxa de contribuição menor, nos ajudando a entender melhor as diferenças (ou similaridades) entre homens e mulheres com relação ao seus hábitos de contribuição.
+Levando em consideração estas definições, nossa terceira pergunta é: \textit{O engajamento de homens e mulheres difere nas comunidades estudadas?} É importante notar que caso haja diferença no hábito de contribuição entre homens e mulheres, podemos verificar se usuários de algum dos gêneros deixam a comunidade mais cedo ou têm uma taxa de contribuição menor, nos ajudando a entender melhor as diferenças (ou similaridades) entre homens e mulheres com relação ao seus hábitos de contribuição.
 
-O tempo de vida de um usuário em uma comunidade do StackExchange não pode ser considerada apenas como a diferença entre a data de sua primeira contribuição e a última. Já que uma pergunta (e suas respectivas respostas) podem ser transferidas entre comunidades\footnote{http://meta.stackexchange.com/questions/2683/move-questions-between-stack-exchange-sites}, nós definimos o tempo de vida de um usuário em uma determinada comunidade como segue: antes de tudo, definimos o primeiro dia de atividade do usuário como a data mais recente entre o dia de cadastro do usuário e a data da sua primeira contribuição na comunidade. Esta medida evita que levemos em consideração um período que o usuário não esteve ativo na comunidade em questão, mas sua pergunta foi transferida de outra comunidade. Mais ainda, definimos que um usuário está inativo quando ele não produz nenhuma contribuição por um período de tempo maior que o intervalo de morte da comunidade. Este intervalo, medido em dias, é calculado da seguinte maneira: para cada usuário obtemos o maior intervalo entre duas de suas contribuições consecutivas. O intervalo de morte é a média dos maiores intervalos de todos os usuários. Por fim, o tempo de vida de um usuário é a diferença entre a data da sua inatividade e a data da sua primeira atividade(ou cadastro), medida em dias.
+O tempo de vida de um usuário em uma comunidade do StackExchange não pode ser considerada apenas como a diferença entre a data de sua primeira contribuição e a última. Já que uma pergunta (e suas respectivas respostas) podem ser transferidas entre comunidades\footnote{http://meta.stackexchange.com/questions/2683/move-questions-between-stack-exchange-sites}, nós definimos o tempo de vida de um usuário em uma determinada comunidade como segue: antes de tudo, definimos o primeiro dia de atividade do usuário como a data mais recente entre o dia de cadastro do usuário e a data da sua primeira contribuição na comunidade. Esta medida evita que levemos em consideração um período que o usuário não esteve ativo na comunidade em questão, mas esteve em outra comunidade e sua pergunta foi transferida. Mais ainda, definimos que um usuário está inativo quando ele não produz nenhuma contribuição por um período de tempo maior que o intervalo de morte da comunidade. Este intervalo, medido em dias, é calculado da seguinte maneira: para cada usuário obtemos o maior intervalo entre duas de suas contribuições consecutivas. O intervalo de morte é a média dos maiores intervalos de todos os usuários. Por fim, o tempo de vida de um usuário é a diferença entre a data da sua última contribuição e a data da sua primeira atividade(ou cadastro), medida em dias.
 
-A frequência de participação, segunda métrica usada nesta pergunta, é definida como o total de contribuições feita por um usuário (perguntas, respostas ou comentários) dividido pelo número de dias nos quais o usuário estava ativo. Ao contrário do tempo de vida, aqui nós consideramos apenas os dias em que o usuário fez algum tipo de contribuição. Para esta pergunta, as hipóteses são:
-
-\begin{itemize}
-    \item \textit{H1$_0$: O tempo de vida do usuário é o mesmo entre os gêneros.}
-    \item \textit{H2$_0$: A frequência de participação dos usuários de ambos os gêneros pertencem à mesma distribuição.}
-\end{itemize}
+A frequência de participação, segunda métrica usada nesta pergunta, é definida como o total de contribuições feita por um usuário (perguntas, respostas ou comentários) dividido pelo número de dias nos quais o usuário estava ativo. Ao contrário do tempo de vida, aqui nós consideramos apenas os dias em que o usuário contribuiu para a comunidade.
 
 \subsection{Contribuições e registros ao longo do tempo}
 
-Para esta pergunta, queremos verificar se a falta de contribuição por parte das mulheres é algo novo nestas comunidades, ou ainda se existem padrões de contribuição ao longo do tempo, seja de aumento ou diminuição. Em outras palavras, nós queremos responder à seguinte pergunta: \textit{A proporção de contribuições feitas por usuários de cada gênero tem aumentado?}. Nós também investigamos se existe alguma tendência no número de registros feito por cada gênero, respondendo à seguinte pergunta: \textit{A proporção de registros feitos por usuários de cada gênero tem aumentado?}
+Para esta pergunta, queremos verificar se a falta de contribuição por parte das mulheres é algo novo nestas comunidades, ou ainda se existem padrões de contribuição ao longo do tempo, seja de aumento ou redução, mais ainda investigamos se existe alguma tendência no número de registros feito por cada gênero. Em outras palavras, nós queremos responder à seguinte pergunta: \textit{A proporção de contribuições e registros feitos por usuários de cada gênero tem aumentado ou reduzido ao longo do tempo?}. 
 
-\begin{itemize}
-    \item \textit{H1$_0$: A proporção de contribuições feitas por homens e mulheres não muda ao longo do tempo.}
-    \item \textit{H2$_0$: A proporção de registros feitos por homens e mulheres não muda ao longo do tempo.}
-\end{itemize}
+\section{Distribuições e testes}
+
+Por motivos de espaço, um sumário de nossas métricas podem ser encontrado aqui\footnote{URL anonymized for submission}. 
+
+A maioria das variáveis possuem uma distribuição bastante enviesada e com certeza não normal. Portanto, utilizamos testes não paramétricos. Para comparar o número de contribuições (e de cada tipo de contribuição), a qualidade das contribuições e a frequência de contribuição de cada gênero utilizamos o teste Mann-Whitney não pareado para verificar dominância estocástica. Para testar se homens e mulheres possuem um tempo de vida divergente na comunidade utilizamos a \textit{Survival Analysis} junto com um teste  LogRank. Já para a quarta pergunta tomamos a proporção de contribuição e registros feitos por cada grupo de gênero, a cada seis meses, e verificamos se esta proporção aumenta ou não, com a ajuda de uma regressão utilizando o método dos mínimos quadrados.
+
+O sumário das variáveis estudadas pode ser encontrada nos Apêndices~\ref{app:primeiro}
 
 % section methods (end)
 
-
-
-% \begin{itemize}
-% 	\item O material utilizado para esta pesquisa está no github.
-% 	\item Nesta sessão irão as hipóteses e questões de pesquisa.
-% \end{itemize}
-
-% \section{Dados Utilizados} % (fold)
-% \label{sub:dados_utilizados}
-% Os dados utilizados 
-% \begin{itemize}
-% 	\item Foi utilizado o dump disponibilizado pelo StackExchange no Archive.org datado de Setembro de 2014. Falar sobre licensa.
-% 	\item Todas as comunidades foram estudadas. As comunidades são divididas em cinco categorias: Tecnologia, Cultura e Recreação, Negócios, Vida e Artes, Profissional e Ciência.
-
-% \end{itemize}
-
-% % section dados_utilizados (end)
-
-% \section{Classificador de Gênero} % (fold)
-% \label{sub:classificador_de_g_nero}
-% \begin{itemize}
-% 	\item Colocar exemplos de inferência de gênero utilizando o classificador automático;
-% 	\item Não há identificação de gênero no perfil do usuário no StackExchange, então o gênero precisa ser inferido;
-% 	\item São estudados aqui apenas os usuários ativos e aqueles que podemos facilmente identificar seu gênero;
-% 	\item As principais atividades de um usuário nestes sites são: comentar, perguntar e responder;
-% 	\item Durante a participação de um usuário nas atividades principais, só é possível identificar o gênero do seu colega por dois meios: foto ou nome;
-% 	\item resolvemos usar seu nome para identificar o gênero dos usuários.
-% 	\item Previous research shows that for people with western names, assessing sex based on the first name of an individual is accurate in social networks -- both those which require real names~\cite{tang2011s} and those which don't~\cite{burger2011discriminating}\cite{liu2013s}. 
-% 	\item Nosso método de inferência é similar ao utilizado em \cite{cunha2014he}.
-% 	\item We used a classifier which categorizes users into 3 classes based on the probabilistic frequency count under labels Male, Female, Unknown; each label indicates if the majority of people cataloged with a certain name is Male or Female. A name is considered Unknown if there’s no statistical difference between the proportion of Male and Female people cataloged with a certain name.
-% 	\item descrever como funciona o método de identificação de gênero
-% 	\item falar sobre o Global Name Data
-% 	\item justificar porque essa amostra é representativa
-% 	\item tabela ou texto sobre proporção identificada nas comunidades.
-% \end{itemize}
-
-% % section classificador_de_g_nero (end)
-
-% \section{Contribuições em Número} % (fold)
-% \label{sub:contribui_es_em_numero}
-
-% The first question is: \textit{Does the amount of contribution from the two genders significantly differ?}
-% This question is addresses the three central types of contribution in the StackExchange platform: questions, answers and comments. And, also, the sum of them. The hypotheses tested are:
-    
-% \begin{itemize}
-%     \item \textit{H1$_0$: The median number of questions a user posts is the same for the two genders.}
-%     \item \textit{H2$_0$: The median number of answers a user posts is the same for the two genders.}
-%     \item \textit{H3$_0$: The median number of comments a user posts is the same for the two genders.}
-%     \item \textit{H3$_0$: The median number of total contributions from a user is the same for the two genders.}
-% \end{itemize}
-
-% % section contribui_es_em_numero (end)
-
-% \section{Qualidade} % (fold)
-% \label{sub:qualidade}
-
-% \textbf{Obs.:} As comunidades ham, startups e poker foram removidas da Q2 por não ter atividade suficiente por parte das mulheres (0). São comunidades atípicas. Nenhuma mulher fez pergunta, ou só uma mulher postou resposta. Ham e startups são comunidades novas.
-
-% Our second question is: \textit{Are contributions from different genders perceived to have different quality levels by the community?}. This question deals with the fact that women may contribute less because their contributions are less appreciated and that may be felt as a failure, discouraging further contributions. 
-% % TODO: essa frase merece uma reescrita
-% Each content created in StackExchange possesses a measure of its quality as perceived by the community created by the collective feedback the community gives through up and down votes. 
-
-% We use the score created through this voting to measure the quality of each user's answers and questions. The voting score of comments was not considered, as their quality is less objective and instrumental in the site. 
-
-% A user's quality in creating questions is defined as the mean of all scores of all questions the user created, or zero in case the user has created no questions. For answers, two metrics are used: first, the \emph{Accepted Rate}, which measures the proportion of answers of users that were chosen as the best answer by the questioner. The second metric is the  \emph{Mean Utility of Answers}, as proposed by Furtado et al.~\cite{furtado2013contributor}, which averages the standardized score of votes answers by a user received compared to competing answers in the same questions. For both answer quality metrics, only users that provided at least one answer are considered.
-
-% The hypotheses considering quality of contributions are thus:
-
-% \textit{H1$_0$: The mean of the scores of the questions made by each user doesn't change between genders.}
-
-% \textit{H2$_0$: Both genders have the same answer acceptance rate.}
-
-% \textit{H3$_0$: The mean utility of the answers from a user is the same between genders.}
-
-% % section qualidade (end)
-
-% \section{Dedicação} % (fold)
-% \label{sub:dedica_o}
-
-% % Parágrafo abaixo pode ser melhor escrito
-% Among the various meanings that the expression "engagement" can relate to, in this study we use it to define the effort put by a user in the system over time. We measure engagement both in terms of the total timespan during which the user was contributing to a site and as the frequency of contributions during this period. 
-
-% Using these definitions, our final question is: \textit{Is the engagement of men and women, with those communities significantly different?} 
-% % Mais coisa que pode ser reescrita porque faz sentido algum
-% Note that this step is necessary to further understand differences or similarities in the contribution behavior of women and men. Otherwise, if there is a difference in total contribution between the genders, it would not be possible to know whether this happens because men/women leave earlier or have lower contribution rates. Additionally, understanding whether women are led to leave the community sooner than men can shed light on exclusion phenomena. 
-
-% The lifetime of a user is the difference from the first day of activity and the last. As a question (followed by it's answers) can be transferred between communities\footnote{http://meta.stackexchange.com/questions/2683/move-questions-between-stack-exchange-sites} we define the first day of activity as the most recent date between the user's join date and the first contribution's date on the community in question. This avoids taking into account the time between the original transferred question's date and the user's join date, as this time the user can't be active in the community. We also define that a user has become inactive in a community after the user is not active for a period larger than the death interval for the community. This interval, measured in days, is calculated as the following: for each user, we take the largest interval between two contributions by this user. The death interval is the average of this measure for all users.
-
-% The frequency of participation is the second metric used in this question, and it is defined as the amount of contributions made by a user (question, answer or comment) divided by the amount of days in which the user was active. Opposed to our lifetime metric, here we only take into account the days in which the user made any kind of contribution. Our resulting hypotheses are:
-
-% \textit{H1$_0$: The lifetime of users is the same between genders.}
-
-% \textit{H2$_0$: The frequency of participation is the same between genders.}
-
-% % section dedica_o (end)
-
-% \section{Contribuições e Cadastros ao Longo do Tempo} % (fold)
-% \label{sub:contribui_es_e_cadastros_ao_longo_do_tempo}
-
-% \begin{itemize}
-% 	\item Comunidades com menos de 14 meses foram retiradas porque a regressão estava dando errado (NaN). Acredito que por que foram separados em semestres e 2 semestres (ou 2 pontos) era muito pouco para a regressão
-% 	\item Proporção de contribuições ao longo do tempo, não cumulativo e proporção de registros ao longo do tempo, não cumulativos.
-% \end{itemize}
-
-% For this research question we want to verify if the lack of female contribution is something new on these communities. Or even if there are any patterns of rise or fall of contributions over time. In other words, we want to answer the following question: \textit{Do the proportion of contributions by each gender change over time?} Also, we investigated if there are any trends on registrations by each gender, answering the following question: \textit{Do the proportion of registrations by each gender change over time?}
-
-% \textit{H1$_0$: The proportion of contributions by men and women hasn't changed over time.}
-
-% \textit{H2$_0$: The proportion of registrations by men and women hasn't changed over time.}
-% % section contribui_es_e_cadastros_ao_longo_do_tempo (end)
-
-% \section{Variable distributions}
-% \label{sub:distributions}
-% \begin{itemize}
-% 	\item Simples justificativa por que cada teste é usado em cada hiposese
-% 	\item Aqui havia uma tabela com o sumarize de cada métrica em cada comunidade. Acho que não é viável fazer isso aqui, mas é importante citar, para poder  justificar mann whitneey e ouutros testes.
-% 	\item summary das variáveis
-% 	\item Falar sobre as regressões e survival analysis. 
-% \end{itemize}
-% % Our metrics are summarized in Table \ref{tab:summary}. Most of our metrics have highly skewed distributions. The observation that these are non-normal distributions leads to the use of Mann-Whitney two sample tests for answering all hypotheses but the one regarding lifetime. For testing if men and women have different lifetime lengths, a survival analysis along with a LogRank test were employed.
