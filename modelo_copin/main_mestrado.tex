@@ -47,6 +47,12 @@
 \usepackage{todonotes}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{array}
+\usepackage{longtable, tabu}
+\usepackage{pdflscape}
+\usepackage{stfloats}
+\usepackage{caption}
+\captionsetup{width=.90\textwidth}
 
 
 % ----------------- Para inserir codigo fonte de linguagens de programacao no documento -------------
@@ -64,6 +70,9 @@ showstringspaces=false
 }
 \renewcommand{\lstlistingname}{C\'odigo Fonte}
 \renewcommand{\lstlistlistingname}{Lista de C\'odigos Fonte}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 % ---------------------------------------------------------------------------------------------------
 
 \selectlanguage{portuges}
@@ -146,7 +155,7 @@ showstringspaces=false
 % nao estao no dicionario portugues.
 % As palavras do dicionario portugues ja sao separadas corretamente pelo lateX
 %
-\hyphenation{ Hardware Software etc  }
+\hyphenation{ Hardware Software etc StackExchange StackOverflow}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,8 +185,12 @@ showstringspaces=false
 % Caso seja necessario algum apendice, descomente a proxima linha.
 
 \appendix
-% \input{sumario}
-% \input{apendices}
+\input{app/info}
+\input{app/distrib}
+\input{app/q1}
+\input{app/q2}
+\input{app/q3}
+\input{app/q4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
