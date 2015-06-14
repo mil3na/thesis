@@ -1,5 +1,6 @@
 %!TEX root = main_mestrado.tex
 \chapter{Metodologia}
+\label{ch:metodos}
 
 Este capítulo detalha os dados e métodos utilizadas para medir quantidade, qualidade e frequência das contribuições dos usuários, assim como o compromisso dos usuários com a comunidade. Aqui também explicamos como identificamos os gêneros dos usuários. Todo o código utilizado neste experimento pode ser encontrado em um repositório no \emph{Github}\footnote{https://github.com/mil3na/gender-study-final}. 
 
@@ -7,7 +8,7 @@ Este capítulo detalha os dados e métodos utilizadas para medir quantidade, qua
 
 Nosso estudo usa dados de todas as comunidades do \emph{StackExchange} em seu último \emph{dump} de Setembro de 2014. Contudo, para que fosse possível realizar a análise, tivemos que remover  algumas comunidades que  não possuíam atividades suficientes, por parte das mulheres, para serem analisadas. Como comunidades muito novas não apresentavam dados suficientes para serem estudados, removemos da nossa pesquisa todas as comunidades do \emph{StackExchange}, presentes no \emph{dump} de Setembro de 2014, que tenham menos de 18 meses de idade, além de comunidades que não tinham um número razoável de mulheres. A lista das 85 comunidades estudadas pode ser encontrada na Tabela~\ref{table:communities}. Mais ainda, apenas os usuários que tenham feito algum tipo de contribuição e têm, no mínimo, 50 pontos de reputação foram estudados. Esta limitação é para garantir que estudamos usuários que estiveram ativos em algum momento na comunidade estudada.
 
-\begin{table*}[Ht]
+\begin{table*}[!hb]
 % Tabela ficar embaixo
 % \begin{tabular}{@{}ccccc@{}}
 \small
@@ -35,30 +36,31 @@ cogsci       & freelancing      & linguistics   & pm           & sound        & 
 \caption[Lista de comunidades estudadas]{Lista das comunidades do \emph{StackExchange} estudadas nesta pesquisa.}~\label{table:communities}
 \end{table*}
 
-As informações utilizadas neste estudo foram obtidas no \emph{dump} trimestral\footnote{https://archive.org/details/\emph{StackExchange}} oferecido pelo \emph{StackExchange}. O grupo costuma publicar regularmente todos os dados de todos os seus sites que não contenham informações privadas do usuário (e.g. \emph{e-mail}). Tais dados incluem perguntas, respostas e comentários postados pelos usuários, assim como os votos (positivos e negativos) recebidos por cada tipo de post. O \emph{dump} também contém a reputação de cada usuário em cada comunidade. As comunidades presentes nestes dados são classificadas pelo \emph{StackExchange} dentre estas seis categorias: \emph{Technology}, \emph{Culture/Recreation}, \emph{Life/Arts}, \emph{Science}, \emph{Business} e \emph{Professional}.
+As informações utilizadas neste estudo foram obtidas no \emph{dump} trimestral\footnote{https://archive.org/details/\emph{StackExchange}} oferecido pelo \emph{StackExchange}. O grupo costuma publicar regularmente todos os dados de todos os seus sites que não contenham informações privadas do usuário (e.g. \emph{email}). Tais dados incluem perguntas, respostas e comentários postados pelos usuários, assim como os votos (positivos e negativos) recebidos por cada tipo de post. O \emph{dump} também contém a reputação de cada usuário em cada comunidade. As comunidades presentes nestes dados são classificadas pelo \emph{StackExchange} dentre estas seis categorias: \emph{Technology}, \emph{Culture/Recreation}, \emph{Life/Arts}, \emph{Science}, \emph{Business} e \emph{Professional}.
 
 \section{Inferindo o gênero dos usuários}
 
 Os perfis do \emph{StackExchange} não possuem explicitamente o gênero de cada usuário, já que a plataforma não exige do usuário esta informação no seu perfil. Sendo assim impossível identificar o gênero de cada usuário automaticamente, com precisão. Já que nosso objetivo neste estudo é apenas investigar o efeito de um usuário, explicitamente, manifestar seu gênero, decidimos focar apenas naqueles usuários que têm a intenção de identificar seu gênero nestas comunidades.
 
-As comunidades do \emph{StackExchange} possuem três tipos de atividades principais: perguntar, responder e comentar. Durante a participação de um usuário nas atividades principais, só é possível identificar o gênero do seu colega por dois meios: sua foto ou nome de usuário. Utilizamos o nome de usuário para identificar o gênero do mesmo. Sabe-se que a maioria dos usuários do \emph{StackExchange} vêm de países ocidentais, provavelmente tendo nomes típicos ocidentais~\cite{schenk2013geo}, e pesquisas anteriores mostram que, para pessoas com nomes ocidentais, inferir o gênero de uma alguém através de sue primeiro nome é um método acurado tanto para redes sociais que requerem o nome real do usuário~\cite{tang2011s}, quanto para as que não o requerem~\cite{burger2011discriminating,liu2013s}.
+As comunidades do \emph{StackExchange} possuem três tipos de atividades principais: perguntar, responder e comentar. Durante a participação de um usuário nas atividades principais, só é possível identificar o gênero do seu colega por dois meios: sua foto ou nome de usuário, como pode ser visto na Figura~\ref{fig:user-reg}. Utilizamos o nome de usuário para identificar o gênero do mesmo. Sabe-se que a maioria dos usuários do \emph{StackExchange} vêm de países ocidentais, provavelmente tendo nomes típicos ocidentais~\cite{schenk2013geo}, e pesquisas anteriores mostram que, para pessoas com nomes ocidentais, inferir o gênero de uma alguém através de sue primeiro nome é um método acurado tanto para redes sociais que requerem o nome real do usuário~\cite{tang2011s}, quanto para as que não o requerem~\cite{burger2011discriminating,liu2013s}.
 
 Nosso método de inferência de gênero é similar ao encontrado em Liu \textit{et al}.~\cite{liu2013s} e Cunha \textit{et al}.~\cite{cunha2014he}. Nós utilizamos o \emph{Global Name Data}~\cite{Hyland:2013:Online}, um banco de dados de nomes baseado em registros de nascimentos nos Estados Unidos e Reino Unido, que contém mais de 100,000 nomes únicos e a frequência com que cada nome é associado a um menino ou menina. Com este banco de dados fizemos um classificador que categoriza os usuários em três classes: Feminino, Masculino e Desconhecido, baseado na contagem de frequência probabilística de cada nome. Um usuário é classificado como Masculino se existir uma proporção significantemente maior de meninos registrados com esse nome, segundo o \emph{Global Name Data}. O gênero de um nome é considerado Desconhecido caso não haja diferença estatística entre a proporção de homens e mulheres catalogados com este nome. Nossa análise só leva em consideração aqueles usuários que possuem nomes os quais é possível inferir com confiança o gênero, de acordo com este método. Com este método, conseguimos identificar, em média, 37\% dos usuários (mínimo: 27\%, máximo: 52\%) dos usuários das comunidades estudadas. Sendo sua grande maioria homens: em média, 93\% são homens (mínimo: 74\%, máximo: 98\%). O Apêndice \ref{app:info} apresenta o sumário dos usuários identificados por gênero, em cada comunidade.
 
-% \begin{table}[h]
-% \centering
-% \begin{tabular}{@{}rlllr@{}}
-% \toprule
-% {\small\textit{Categoria}} & {\small \textit{Comunidades}} & {\small \textit{Mulheres}} & {\small \textit{Homens}} & {\small \textit{Idade (meses)}} \\ \midrule
-% business           & 3  & 31  & 609  & 43 \\
-% culture-recreation & 21 & 68  & 893  & 39 \\
-% life-arts          & 15 & 92  & 1046 & 44 \\
-% professional       & 2  & 81  & 800  & 25 \\
-% science            & 12 & 148 & 1987 & 43 \\
-% technology         & 32 & 476 & 8240 & 47 \\ \bottomrule
-% \end{tabular}
-% \caption[Média de usuários identificados por categoria]{A média da quantidade de homens e mulheres identificados em cada categoria, o número de comunidades por categoria e a média das idades das comunidades de cada categoria, em meses.}~\label{table:categories}
-% \end{table}
+\section{Manuseio dos dados}
+
+% 3x500
+
+Os dados concedidos pelo \emph{StackExchange} são disponibilizados no formato \emph{XML}, o qual dificulta a manipulação dos mesmos. Portanto, a primeira etapa foi a inserção dos dados em um banco de dados. Como pretendíamos realizar várias associações entre as comunidades e não tínhamos um \emph{schema} fixo, optamos por um banco de dados flexível, orientado a documentos, o \emph{MongoDB}. Por praticidade, utilizamos a linguagem de programação \emph{Python} para filtrar de dentro dos arquivos \emph{XML} os dados os quais estávamos interessados, transformar no formato adequado, criar um sub banco de dados no \emph{MongoDB} para cada comunidade e inserir seus respectivos dados lá.
+
+
+
+\subsection{Classificando os usuários quanto ao gênero}
+
+Para classificar os usuários quanto ao seu gênero, fizemos o \emph{download} do banco de dados oferecido pelo \emph{Global Name Data} através do site \emph{Github}\footnote{https://github.com/OpenGenderTracking/globalnamedata/tree/master/assets} e o inserimos no nosso banco de dados \emph{MongoDB}. Com um programa escrito em \emph{Python} utilizamos os dados já filtrados que se encontram em nosso banco de dados. Para cada usuário de cada site, selecionamos seu nome e verificamos se ele se encontra no banco de dados de nomes. Caso seja encontrado, inserimos a classe a qual ele pertence (Feminino, Masculino ou Desconhecido) ao seu perfil. Se não, este usuário será classificado como tendo o gênero desconhecido. Apenas os usuários que foram classificados como Feminino ou Masculino são utilizados neste estudo.
+
+\subsection{Cálculos estatísticos}
+
+Visto que todo a manipulação dos dados feitas até este ponto do experimento foram realizadas utilizando scripts em \emph{Python} e a não compatibilidade do banco de dados \emph{MongoDB} com a linguagem \emph{R}, na época em que o estudo foi realizado, optamos por utilizar as bibliotecas \emph{pandas}, \emph{numpy}, \emph{scipy} e \emph{statsmodels} que provêm uma funcionalidade similar a encontrada na linguagem \emph{R}. Ademais, utilizamos a ferramenta \emph{ipython notebook} que nos permite dispor código e resultados (sejam estes numéricos ou gráficos) de forma simples e clara, facilitando o entendimento e reprodução do experimento. Estes \emph{notebooks} assim como todo o código utilizado para esta pesquisa pode ser encontrado no endereço \emph{Github} citado no início deste capítulo.
 
 \section{Medindo contribuições e engajamento}
 
@@ -67,6 +69,8 @@ A questão principal do nosso estudo é esclarecer o quão diferente é a partic
 \subsection{Número de contribuições}
 
 Nossa primeira pergunta é: \textit{O número de contribuições feitas por homens e por mulheres difere significantemente nas comunidades observadas?} Esta pergunta é relacionada aos três tipos principais de contribuição na plataforma \emph{StackExchange}: perguntas, respostas e comentários, além da soma de todas.
+
+% TODO: falar sobre expectativas
 
 \subsection{Qualidade}
 
@@ -88,15 +92,19 @@ Antes de tudo, definimos o primeiro dia de atividade do usuário como a data mai
 
 A frequência de participação, segunda métrica usada nesta pergunta, é definida como o total de contribuições feita por um usuário (perguntas, respostas ou comentários) dividido pelo número de dias nos quais o usuário estava ativo. Ao contrário do tempo de vida, aqui nós consideramos apenas os dias em que o usuário contribuiu para a comunidade.
 
+% TODO: falar sobre expectativas
+
 \subsection{Contribuições e registros ao longo do tempo}
 
 Para esta pergunta, verificamos se a falta de contribuição por parte das mulheres é algo novo nestas comunidades, ou ainda se existem padrões de contribuição ao longo do tempo, seja de aumento ou redução. Investigamos também se existe alguma tendência no número de registros feito por cada gênero. Em outras palavras, buscamos responder à seguinte pergunta: \textit{A proporção de contribuições e registros feitos por usuários de cada gênero tem aumentado ou reduzido ao longo do tempo?}. 
 
+% TODO: falar sobre expectativas
+
 \section{Distribuições e testes}
 
-% Por motivos de espaço, um sumário de nossas métricas podem ser encontrado aqui\footnote{URL anonymized for submission}. 
-
 A maioria das variáveis possuem uma distribuição bastante enviesada e com certeza não normal, como pode ser visto no Apêndice~\ref{app:distrib}. Portanto, utilizamos testes não paramétricos. Para comparar o número de contribuições (e de cada tipo de contribuição), a qualidade das contribuições e a frequência de contribuição de cada gênero utilizamos o teste \emph{Mann-Whitney-U} não pareado para verificar dominância estocástica. Para testar se homens e mulheres possuem um tempo de vida divergente na comunidade utilizamos a \textit{Survival Analysis} junto com um teste \emph{LogRank}. Já para a quarta pergunta tomamos a proporção de contribuição e registros feitos por cada grupo de gênero, a cada seis meses, e verificamos se esta proporção aumenta ou não, com a ajuda de uma regressão utilizando o método dos mínimos quadrados.
+
+%TODO: Explicar melhor o uso dos testes
 
 O sumário das variáveis estudadas, para cada pergunta de pesquisa, pode ser encontrada nos Apêndices~\ref{app:q1},~\ref{app:q2},~\ref{app:q3} e ~\ref{app:q4}.
 

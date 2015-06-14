@@ -1,70 +1,49 @@
 %!TEX root = main_mestrado.tex
 \chapter{Resultados}
+\label{ch:resultados}
 
 \begin{figure}
-  \raggedleft
-  % \includegraphics[width=1\columnwidth]{figures/questions_women.pdf}
-  \includegraphics[width=1\columnwidth]{figures/test.pdf}
-  \caption[Comparação do número de perguntas]{Comparação do número de perguntas provenientes de contribuidores de diferentes gêneros nos sites onde pode-se verificar uma diferença estatisticamente significante e mulheres contribuem mais do que homens. As caixas representam os quartis das distribuições enquanto os traços mostram o primeiro e nonagésimo nono percentis. Lembrando que o teste MWW pode achar diferença estatística na soma dos rankings mesmo que os quartis sejam similares nas duas amostras. Para visualizar a distribuição em escala de log o acrescentamos 1 ao valor original do número de contribuições realizadas por cada usuário. }~\label{figure:questions}
+  \includegraphics[width=1\columnwidth]{figures/perguntas_mulheres.pdf}
+  \caption[Comparação do número de perguntas]{Comparação do número de perguntas provenientes de contribuidores de diferentes gêneros nos sites onde pode-se verificar uma diferença estatisticamente significante e mulheres contribuem mais do que homens. As caixas representam os quartis das distribuições enquanto os traços mostram o primeiro e nonagésimo nono percentis. Lembrando que o teste MWW pode achar diferença estatística na soma dos rankings mesmo que os quartis sejam similares nas duas amostras. Para visualizar a distribuição em escala de log o acrescentamos 1 ao valor original do número de contribuições realizadas por cada usuário. }~\label{fig:questions}
 \end{figure}
-
-% This section presents the results for each of the four questions we address. When describing the differences in a variable for a set of sites, we use the notation $W/S/M$, with $W$ being the number of sites in which women had significantly higher values for that variable, $S$ the number of sites with no significant difference, and $M$ the number of sites in which men had significantly higher values.  
 
 Este capítulo apresenta os resultados para cada uma das quatro perguntas de pesquisa. Quando descrevemos as diferenças para uma determinada variável de um conjunto de sites, nós utilizamos da notação $M/S/H$, onde $M$ é o número de sites onde mulheres obtiveram valores para esta variável significantemente maiores, $S$ o número de sites onde não obteve-se diferença significante e, por fim, $H$ é o número de sites onde homens obtiveram valores significantemente maiores.
 
 \section{Número de contribuições}
-% For all four types of contribution considered, a common pattern emerges in our results: the amount of contributions from men and women is not significantly different in the majority of sites (Mann-Whitney-Wilcoxon U significance tests, $\alpha = 0.05$). % [n] Show this result. TODO
-
 Para todos os tipos de contribuições considerados um padrão em comum surgiu em nossos resultados: a diferença da quantidade de contribuições provenientes de homens e mulheres não é significativa na maioria dos sites (teste \emph{Mann-Whitney U}, $\alpha = 0.05$)
-
-% For all types of contribution, when there are differences in contribution levels, there is larger number of sites in which a typical women contributor is more active than sites in which men tend to contribute more. The difference in this number is the highest for questions ($21/62/2$), followed by answers ($18/56/11$) and all contributions combined ($10/73/2$). 
 
 Dos sites em que pudemos observar uma diferença estatística significante, existe um número maior de comunidades onde podemos observar que mulheres são mais ativas que homens do que o contrário. Esta diferença é maior quando observamos o número de perguntas ($21/62/2$), seguido pelo número de respostas ($18/56/11$) e, finalmente, o número total de contribuições($10/73/2$). 
 
+Interessante notar que existe uma diferença no padrão de categorias nas quais podemos notar diferenças no número de respostas entre homens e mulheres, comparando aos outros tipos de contribuição. Para perguntas, comentários e a soma de todas as contribuições, as comunidades onde mulheres são geralmente mais ativas pertencem a categorias relacionadas a \emph{STEM}. Para perguntas a distribuição de comunidades relacionadas a \emph{STEM} é $16/28/0$, como pode ser observado na Figura~\ref{fig:questions}. Contudo, quando olhamos para respostas, apenas três das dezoito comunidades onde mulheres respondem mais do que homens são relacionadas a \emph{STEM} (como pode ser visto na Figura~\ref{fig:answers}). É mais comum encontrar comunidades das categorias \emph{Life/Arts} ou \emph{Professional} dentre os sites que pode-se observar que mulheres respondem significantemente mais do que homens. Mais ainda, duas das três comunidades relacionadas a \emph{STEM} onde mulheres respondem mais que homens abordam assuntos que são estereotipados como mais femininos: \emph{UX} e \textit{Software Quality Assurance}. As comunidades onde homens respondem significantemente mais do que mulheres podem ser vistas na Figura~\ref{fig:answers-men}.
+
 \begin{figure}
   \centering
-  % \raggedleft
-  % \includegraphics[width=1\columnwidth]{figures/answers_women.pdf}
-  \includegraphics[width=1\columnwidth]{figures/test.pdf}
-  \caption[Comparação do número de respostas em comunidades onde mulheres respondem mais.]{Comparação do número de respostas provenientes de contribuidores de diferentes gêneros nos sites onde pode-se verificar uma diferença estatisticamente significante e mulheres contribuem mais do que homens. As caixas representam os quartis das distribuições enquanto os traços mostram o primeiro e nonagésimo nono percentis. Lembrando que o teste MWW pode achar diferença estatística na soma dos rankings mesmo que os quartis sejam similares nas duas amostras. Para visualizar a distribuição em escala de log o acrescentamos 1 ao valor original do número de contribuições realizadas por cada usuário.}~\label{figure:answers}
+  \includegraphics[width=1\columnwidth]{figures/respostas_mulheres.pdf}
+  \caption[Comparação do número de respostas em comunidades onde mulheres respondem mais.]{Comparação do número de respostas provenientes de contribuidores de diferentes gêneros nos sites onde pode-se verificar uma diferença estatisticamente significante e mulheres contribuem mais do que homens. As caixas representam os quartis das distribuições enquanto os traços mostram o primeiro e nonagésimo nono percentis. Lembrando que o teste MWW pode achar diferença estatística na soma dos rankings mesmo que os quartis sejam similares nas duas amostras. Para visualizar a distribuição em escala de log o acrescentamos 1 ao valor original do número de contribuições realizadas por cada usuário.}~\label{fig:answers}
 \end{figure}
 
-% Interestingly, the categories in which these differences happen differ for answers in contrast with the other types of contribution. For questions, comments, and all contributions combined, the communities where women are usually more active are related to \emph{STEM} categories. For questions, this distribution is $16/28/0$ for the \emph{STEM} sites, as seen in Figure~\ref{figure:questions}. In contrast, when considering answers, only three of the 18 sites in which women tend to answer more are \emph{STEM} sites (see Figure ~\ref{figure:answers}). Most often, sites in which women answer significantly more than men happen in the life-arts or professional categories. Also, two of the three \emph{STEM} sites in which women answer more are stereotypically associated with women: UX and Software Quality Assurance. The other way around, communities which men answer more than women can be seen on Figure~\ref{figure:answers-men}.
-
-Interessante notar que existe uma diferença no padrão de categorias nas quais podemos notar diferenças no número de respostas entre homens e mulheres, comparando aos outros tipos de contribuição. Para perguntas, comentários e a soma de todas as contribuições, as comunidades onde mulheres são geralmente mais ativas pertencem a categorias relacionadas a \emph{STEM}. Para perguntas a distribuição de comunidades relacionadas a \emph{STEM} é $16/28/0$, como pode ser observado na Figura~\ref{figure:questions}. Contudo, quando olhamos para respostas, apenas três das dezoito comunidades onde mulheres respondem mais do que homens são relacionadas a \emph{STEM} (como pode ser visto na Figura~\ref{figure:answers}). É mais comum encontrar comunidades das categorias \emph{Life/Arts} ou \emph{Professional} dentre os sites que pode-se observar que mulheres respondem significantemente mais do que homens. Mais ainda, duas das três comunidades relacionadas a \emph{STEM} onde mulheres respondem mais que homens abordam assuntos que são estereotipados como mais femininos: \emph{UX} e \textit{Software Quality Assurance}. As comunidades onde homens respondem significantemente mais do que mulheres podem ser vistas na Figura~\ref{figure:answers-men}.
-
-\begin{figure}
-  % \centering
-  \raggedleft
-  % \includegraphics[width=1\columnwidth]{figures/answers_men.pdf}
-  \includegraphics[width=1\columnwidth]{figures/test.pdf}
-  \caption[Comparação do número de respostas em comunidades onde homens respondem mais.]{Comparação do número de respostas provenientes de contribuidores de diferentes gêneros nos sites onde pode-se verificar uma diferença estatisticamente significante e homens contribuem mais do que mulheres. As caixas representam os quartis das distribuições enquanto os traços mostram o primeiro e nonagésimo nono percentis. Lembrando que o teste MWW pode achar diferença estatística na soma dos rankings mesmo que os quartis sejam similares nas duas amostras. Para visualizar a distribuição em escala de log o acrescentamos 1 ao valor original do número de contribuições realizadas por cada usuário. }~\label{figure:answers-men}
-\end{figure}
-
-% These results point that women who engage with most sites we study and display their gender usually do not contribute significantly less than men. In fact, when there are differences, they are most often on the opposite direction. 
 
 Estes resultados nos mostram que mulheres que identificam seu gênero e que se engajam à comunidade, na maioria dos sites, não contribuem menos do que os homens. Ao contrário: quando podemos observar diferenças, elas são frequentemente apontam que mulheres contribuem mais do que homens.
 
 \section{Qualidade} % (fold)
 \label{subsec:qualidade}
-% Few sites display a significant difference in how they evaluate the quality of contributions made by men and women. This difference happens less often than a difference in number of contributions. For the acceptance ratio ($7/76/2$) and mean utility of answers ($9/74/2$) from users, slightly more communities tend to attribute higher quality of the answers from women. For the average voting balance of questions posted, there is an equilibrium in the sites we study ($8/67/10$). Moreover, there seems to be no clear trend in the sites regarding the categories in which significant differences in quality evaluation happen. 
-
 Poucos foram os sites que apresentaram uma diferença significante em como a comunidade avalia a qualidade das contribuições de homens e mulheres. Esta diferença ocorre menos frequentemente do que as diferenças em número de contribuições. Para a taxa de aceitação ($7/76/2$) e utilidade média das respostas ($9/74/2$) dos usuários, um número pequeno de comunidades tende a atribuir às respostas das mulheres uma qualidade maior do que às dos homens. Para a média dos votos de uma pergunta, podemos observar um equilíbrio nos sites que estudamos ($8/67/10$). Mais ainda, não encontramos um padrão relacionado às categorias onde podemos encontrar diferença significativa na avaliação de qualidade.
 
 % section qualidade (end)
 
 
-
 \section{Dedicação}% (fold)
-% For the metrics that consider time, the differences that we observe have a clear trend. First, for most sites, there is no significant difference in the lifetime or activity frequency of men and women. However, when differences in lifetime occur, they happen more often because men stay for longer in a community than the opposite ($1/70/14$). Conversely, the frequency of contributions in active days happens more often because women are more active than the other way around ($10/74/1$). 
-
 Para as métricas relacionadas ao tempo dedicado à comunidade, as diferenças observadas possuem um padrão bem claro. Primeiramente, para a maioria dos sites, não há diferença estatística quanto ao tempo de vida ou frequência de atividade de homens e mulheres. Contudo, quando constatamos diferença no tempo de vida, estas acontecem porque homens passam mais tempo na comunidade do que mulheres ($1/70/14$). E o contrário acontece com relação à frequência de contribuição em dias ativos: mulheres contribuem mais frequentemente do que homens ($10/74/1$).
 
-% We also observe that the largest difference in lifetime occurs in StackOverflow, the the most popular and oldest site in \emph{StackExchange}. Moreover, the following three sites with largest differences in lifetime are also old and \emph{STEM}-related: MathOverflow, SuperUser and ServerFault, See Table~\ref{table:lifetime}. 
+\begin{figure}[!b]
+  \raggedleft
+  \includegraphics[width=1\columnwidth]{figures/respostas_homens.pdf}
+  \caption[Comparação do número de respostas em comunidades onde homens respondem mais.]{Comparação do número de respostas provenientes de contribuidores de diferentes gêneros nos sites onde pode-se verificar uma diferença estatisticamente significante e homens contribuem mais do que mulheres. As caixas representam os quartis das distribuições enquanto os traços mostram o primeiro e nonagésimo nono percentis. Lembrando que o teste MWW pode achar diferença estatística na soma dos rankings mesmo que os quartis sejam similares nas duas amostras. Para visualizar a distribuição em escala de log o acrescentamos 1 ao valor original do número de contribuições realizadas por cada usuário. }~\label{fig:answers-men}
+\end{figure}
 
 Nós também notamos que as maiores diferenças entre os gêneros quanto ao tempo de vida na comunidade ocorre no StackOverflow, o mais popular e também o mais antigo site do \emph{StackExchange}. Mais ainda, os próximos três sites em grandeza de diferença de tempo de vida também são antigos e relacionados a \emph{STEM}: \emph{MathOverflow}, \emph{SuperUser} e \emph{ServerFault}. Estas diferenças podem ser observadas na Tabela~\ref{table:lifetime}. 
 
-\begin{table}[Htbp]
+\begin{table}[!b]
 \centering
 \begin{tabular}{@{}rllr@{}}
 \toprule
@@ -88,35 +67,34 @@ Nós também notamos que as maiores diferenças entre os gêneros quanto ao temp
 \caption[Diferença de tempo de vida entre homens e mulheres]{Sites onde podemos observar uma diferença estatística significante entre homens e mulheres quanto ao seu tempo de vida na comunidade. Apresentamos a diferença entre a mediana de dias ativos, a idade da comunidade em dias e sua categoria.}~\label{table:lifetime}
 \end{table}
 
-% For frequency, a different pattern happens. In all seven \emph{STEM} sites for which there is a difference in the frequency of activity, women have a higher frequency than men. Together with the lifetime results, this suggests that although women leave the community sooner than men, they act more while they are still engaged with the community.
-
 Com relação à frequência, um padrão diferente pode ser observado. Em todos os sete sites relacionados a \emph{STEM} que apresentaram diferença estatística com relação à frequência de atividade, mulheres contribuem mais frequentemente do que homens. Assimilando isto com o resultado relacionado ao tempo de vida, podemos inferir que, apesar que mulheres deixam a comunidade antes que os homens, elas contribuem mais enquanto durante o tempo que ainda estão associadas ao site.
 
 
 \section{Contribuições e registros ao longo do tempo}
-% For the dynamics of contributions coming from men and women, we see that in roughly a quarter of the sites, the fraction of contributions coming from women is increasing ($20/60/5$). Albeit less pronounced, for the communities where proportion of registrations from different genders have a significant trend over time, it happens more often that the number of registrations coming from women is increasing: $8/76/1$. Both of these trends are also stronger considering only \emph{STEM} sites: $16/25/3$ for contributions over time, and $6/38/0$ for proportion of new registrations.
-
 Observando as contribuições de homens e mulheres ao longo do tempo notamos que em, aproximadamente, um quarto dos sites estudados a proporção das contribuições provenientes de mulheres está aumentando ($20/60/5$). Apesar de não tão evidente, das comunidades que apresentaram diferença estatística quanto aos registos feitos por homens e mulheres ao longo do tempo é possível ver um padrão: os registros de mulheres têm aumentado ($8/76/1$). Ambos resultados são mais visíveis se considerarmos apenas os sites relacionados a \emph{STEM}: $16/25/3$ para contribuições ao longo do tempo e $6/38/0$ para a proporção de novos registros.
 
-\section{Focando nos maiores sites} %  DEixamos essa seção? Retirada.
-% The two largest sites of \emph{StackExchange} -- StackOverflow and SuperUser -- are much larger and older than the remainder sites in our data. Because they thus own a significant proportion of all \emph{StackExchange} users, we highlight their behavior. In both sites, there men have significantly longer lifetimes, and answers more questions. On the other hand, the proportion of new registrations coming from women has increased over time. 
+\section{Focando nos maiores sites} 
 
-Os dois maiores sites do \emph{StackExchange} -- \emph{StackOverflow} e \emph{SuperUser} -- são muito maiores e mais antigos que os demais sites disponíveis na nossa amostra. Já que juntos eles possuem uma proporção significante dos usuários de toda a plataforma \emph{StackExchange}, achamos por bem evidenciar o comportamento dos usuários nestas comunidades. Em ambos os sites, homens têm um tempo de vida significantemente maior e respondem a mais perguntas. Por outro lado, a proporção de registros feitos por mulheres têm aumentado com o tempo.
+Os três maiores sites do \emph{StackExchange} -- \emph{StackOverflow}, \emph{ServerFault} e \emph{SuperUser} -- são muito maiores e mais antigos que os demais sites disponíveis na nossa amostra. Já que juntamente com os sites \emph{Mathematics} e \emph{Programmers} eles possuem uma proporção significante dos usuários de toda a plataforma \emph{StackExchange}, sendo os cinco maiores sites, em número de usuários, da nossa amostra, achamos por bem evidenciar o comportamento dos usuários nestas comunidades. 
 
-% A comparison of  the number of contributions on the top five bigger \emph{StackExchange} communities related to \emph{STEM} can be seen on Figure~\ref{figure:top-five}.
-Uma comparação do número de contribuições nos cinco maiores sites do \emph{StackExchange} relacionados a \emph{STEM} pode ser encontrada na Figura~\ref{figure:top-five}.
+O \emph{StackOverflow}, primeira comunidade da plataforma, mulheres perguntam mais e homens costumam responder mais, apesar de não encontrarmos diferença estatística no total de contribuições feita por ambos os gêneros. Perguntas e respostas vistas como mais qualificadas pelos usuários advêm de homens. Ademais, o padrão de homens possuírem maior tempo de vida na comunidade, enquanto mulheres possuem maior frequência de contribuição também pode ser visto neste site. E ainda, a proporção de mulheres se cadastrando e contribuindo para a comunidade tem aumentado nos últimos anos.
+
+Os três maiores sites do \emph{StackExchange} -- \emph{StackOverflow}, \emph{ServerFault} e \emph{SuperUser} -- são muito maiores e mais antigos que os demais sites disponíveis na nossa amostra. Já que juntamente com os sites \emph{Mathematics} e \emph{Programmers} eles possuem uma proporção significante dos usuários de toda a plataforma \emph{StackExchange}, sendo os cinco maiores sites, em número de usuários, da nossa amostra, achamos por bem evidenciar o comportamento dos usuários nestas comunidades. 
+
+Em todas as demais comunidades dentre as cinco maiores comunidades da nossa amostra, homens respondem mais que mulheres. O que já era esperado, já que todas tratam de assuntos relacionados a \emph{STEM}. Mulheres perguntam mais nos sites \emph{Programmers} e \emph{Mathematics}. E, nesse último, mulheres comentam e têm um numero total de contribuições maior que o dos homens também. Quanto à qualidade, apenas a \emph{ServerFault} apresentou diferença estatística e em apenas uma métrica (média de votos das perguntas), favorável aos homens. Nos sites \emph{ServerFault}, \emph{SuperUser}, homens apresentam um tempo de vida na comunidade maior do que as mulheres, enquanto apenas na \emph{Mathematics} mulheres possuem uma frequência de postagem maior que a dos homens. As demais não apresentam diferença estatística. Ao longo do tempo, mulheres têm contribuído mais do que homens nos sites \emph{Programmers}, \emph{Mathematics} e \emph{ServerFault}. 
+
+Por fim, uma comparação do número de contribuições nos cinco maiores sites do \emph{StackExchange} relacionados a \emph{STEM} pode ser encontrada na Figura~\ref{fig:top-five}.
 
 
-\begin{figure}
+\begin{figure}[!b]
   \centering
-  % \raggedleft
-  % \includegraphics[width=1\columnwidth]{figures/five-largest_quantity.pdf}
-  \includegraphics[width=1\columnwidth]{figures/test.pdf}
-  \caption[Comparação do número de contribuições na 5 maiores comunidades.]{Comparação do número de contribuições provenientes de usuários de diferentes gêneros nos cinco maiores sites (em quantidade de usuários) relacionados a \emph{STEM} do \emph{StackExchange}. As caixas representam os quartis das distribuições enquanto os traços mostram o primeiro e nonagésimo nono percentis.}~\label{figure:top-five}
+  \includegraphics[height=0.65\paperheight]{figures/top5_quantidade.pdf}
+  \caption[Comparação do número de contribuições na 5 maiores comunidades.]{Comparação do número de contribuições provenientes de usuários de diferentes gêneros nos cinco maiores sites (em quantidade de usuários) relacionados a \emph{STEM} do \emph{StackExchange}. As caixas representam os quartis das distribuições enquanto os traços mostram o primeiro e nonagésimo nono percentis.}~\label{fig:top-five}
 \end{figure}
-% section conclusions (end)
 
-% section tempo (end)
+
+% \section{Resultados por categoria}
+
 
 
 % section results (end)
