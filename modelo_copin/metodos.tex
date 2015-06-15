@@ -48,15 +48,15 @@ Nosso método de inferência de gênero é similar ao encontrado em Liu \textit{
 
 \section{Manuseio dos dados}
 
-% 3x500
-
 Os dados concedidos pelo \emph{StackExchange} são disponibilizados no formato \emph{XML}, o qual dificulta a manipulação dos mesmos. Portanto, a primeira etapa foi a inserção dos dados em um banco de dados. Como pretendíamos realizar várias associações entre as comunidades e não tínhamos um \emph{schema} fixo, optamos por um banco de dados flexível, orientado a documentos, o \emph{MongoDB}. Por praticidade, utilizamos a linguagem de programação \emph{Python} para filtrar de dentro dos arquivos \emph{XML} os dados os quais estávamos interessados, transformar no formato adequado, criar um sub banco de dados no \emph{MongoDB} para cada comunidade e inserir seus respectivos dados lá.
 
+Próxima etapa foi filtrar os usuários que não nos interessam. Esta pesquisa foca em comportamento de usuários em um site, então os usuários que não participam da comunidade não são relevantes para o nosso estudo. Um script em \emph{Python} foi criado para remover do nosso banco de dados todos aqueles usuários que realizaram nenhuma contribuição ou que tenham uma reputação muito baixa. Consideramos uma reputação baixa aquela que não permite que um usuário possa realizar qualquer uma das principais contribuições possíveis na plataforma. Na época do estudo, o usuário precisaria de 50 pontos de reputação para poder perguntar, responder ou comentar no site.
 
+Para cada usuário foi criada um sumário da sua participação em cada comunidade e inserido em sua entrada no banco de dados. Mais uma vez um script escrito em \emph{Python} foi utilizado para realizar esta tarefas. O sumário de cada usuário conta com o número de identificação do usuário no site, sua reputação, a data de ingresso, a média da pontuação obtida nas perguntas, respostas e comentários feitos, o número total de perguntas, respostas e comentários feitos, a taxa de aceitação e utilidade média das respostas, as datas de todas as contribuições feitas e o tipo da primeira contribuição.
 
 \subsection{Classificando os usuários quanto ao gênero}
 
-Para classificar os usuários quanto ao seu gênero, fizemos o \emph{download} do banco de dados oferecido pelo \emph{Global Name Data} através do site \emph{Github}\footnote{https://github.com/OpenGenderTracking/globalnamedata/tree/master/assets} e o inserimos no nosso banco de dados \emph{MongoDB}. Com um programa escrito em \emph{Python} utilizamos os dados já filtrados que se encontram em nosso banco de dados. Para cada usuário de cada site, selecionamos seu nome e verificamos se ele se encontra no banco de dados de nomes. Caso seja encontrado, inserimos a classe a qual ele pertence (Feminino, Masculino ou Desconhecido) ao seu perfil. Se não, este usuário será classificado como tendo o gênero desconhecido. Apenas os usuários que foram classificados como Feminino ou Masculino são utilizados neste estudo.
+Para classificar os usuários quanto ao seu gênero, fizemos o \emph{download} do banco de dados oferecido pelo \emph{Global Name Data} através do site \emph{Github}\footnote{https://github.com/OpenGenderTracking/globalnamedata/tree/master/assets} e o inserimos no nosso banco de dados \emph{MongoDB}. Com um programa escrito em \emph{Python} utilizamos os dados já filtrados que se encontram em nosso banco de dados. Para cada usuário de cada site, selecionamos seu nome e verificamos se ele se encontra no banco de dados de nomes. Caso seja encontrado, inserimos a classe a qual ele pertence (Feminino, Masculino ou Desconhecido) ao seu sumário. Se não, este usuário será classificado como tendo o gênero desconhecido. Apenas os usuários que foram classificados como Feminino ou Masculino são utilizados neste estudo.
 
 \subsection{Cálculos estatísticos}
 
@@ -70,7 +70,7 @@ A questão principal do nosso estudo é esclarecer o quão diferente é a partic
 
 Nossa primeira pergunta é: \textit{O número de contribuições feitas por homens e por mulheres difere significantemente nas comunidades observadas?} Esta pergunta é relacionada aos três tipos principais de contribuição na plataforma \emph{StackExchange}: perguntas, respostas e comentários, além da soma de todas.
 
-% TODO: falar sobre expectativas
+Como a proporção de mulheres sendo menor que a de homens na maioria dos sites das plataformas e, em alguns sites, esta proporção atingindo menos de um terço dos usuários identificados, esperávamos que isto se refletiria nas contribuições provenientes das mulheres. Em outras palavras, acreditávamos que a resposta para esta primeira pergunta seria que, independente do tipo de contribuição, mulheres contribuiriam menos do que os homens.
 
 \subsection{Qualidade}
 
@@ -92,21 +92,21 @@ Antes de tudo, definimos o primeiro dia de atividade do usuário como a data mai
 
 A frequência de participação, segunda métrica usada nesta pergunta, é definida como o total de contribuições feita por um usuário (perguntas, respostas ou comentários) dividido pelo número de dias nos quais o usuário estava ativo. Ao contrário do tempo de vida, aqui nós consideramos apenas os dias em que o usuário contribuiu para a comunidade.
 
-% TODO: falar sobre expectativas
+A nossa expectativa para a resposta desta pergunta era que mulheres se engajam menos, principalmente às comunidades que abordam assuntos relacionados a \emph{STEM}. Existe um estigma de que estas comunidades não são atrativas às mulheres e que também são excludentes, fazendo com que mulheres não sejam bem-vindas. Por esses motivos, as poucas mulheres que se cadastrasse em qualquer site o deixaria em pouco tempo.
 
 \subsection{Contribuições e registros ao longo do tempo}
 
 Para esta pergunta, verificamos se a falta de contribuição por parte das mulheres é algo novo nestas comunidades, ou ainda se existem padrões de contribuição ao longo do tempo, seja de aumento ou redução. Investigamos também se existe alguma tendência no número de registros feito por cada gênero. Em outras palavras, buscamos responder à seguinte pergunta: \textit{A proporção de contribuições e registros feitos por usuários de cada gênero tem aumentado ou reduzido ao longo do tempo?}. 
 
-% TODO: falar sobre expectativas
+Se mulheres contribuem pouco e por pouco tempo é lógico esperar que a proporção de contribuições por parte das mulheres tenha aumentado por um tempo, mas estagnado depois e, provavelmente até diminuído nos últimos meses. O mesmo é o que esperamos para a proporção de registros, até porque estas comunidades são conhecidas por não serem \emph{female-friendly}.
 
 \section{Distribuições e testes}
 
-A maioria das variáveis possuem uma distribuição bastante enviesada e com certeza não normal, como pode ser visto no Apêndice~\ref{app:distrib}. Portanto, utilizamos testes não paramétricos. Para comparar o número de contribuições (e de cada tipo de contribuição), a qualidade das contribuições e a frequência de contribuição de cada gênero utilizamos o teste \emph{Mann-Whitney-U} não pareado para verificar dominância estocástica. Para testar se homens e mulheres possuem um tempo de vida divergente na comunidade utilizamos a \textit{Survival Analysis} junto com um teste \emph{LogRank}. Já para a quarta pergunta tomamos a proporção de contribuição e registros feitos por cada grupo de gênero, a cada seis meses, e verificamos se esta proporção aumenta ou não, com a ajuda de uma regressão utilizando o método dos mínimos quadrados.
+A maioria das variáveis possuem uma distribuição bastante enviesada e com certeza não normal, como pode ser visto no Apêndice~\ref{app:distrib}. Portanto, utilizamos testes não paramétricos. Para comparar o número de contribuições (e de cada tipo de contribuição), a qualidade das contribuições e a frequência de contribuição de cada gênero utilizamos o teste um teste de dominância estocástica, o \emph{Mann-Whitney-U} não pareado. Primeiramente a versão bilateral do teste para verificar se há diferença estatística e, em seguida, o mesmo teste é aplicado aos grupos que apresentaram diferença estatística mas, desta vez, utilizando sua versão unilateral para verificar se o grupo de mulheres era o que apresentava dominância estocástica.
 
-%TODO: Explicar melhor o uso dos testes
+Para testar se homens e mulheres possuem um tempo de vida divergente na comunidade utilizamos a \textit{Survival Analysis} junto com um teste \emph{LogRank}. Já para a quarta pergunta tomamos a proporção de contribuição e registros feitos por cada grupo de gênero, a cada seis meses, e verificamos se esta proporção aumenta ou não, com a ajuda de uma regressão utilizando o método dos mínimos quadrados.
 
-O sumário das variáveis estudadas, para cada pergunta de pesquisa, pode ser encontrada nos Apêndices~\ref{app:q1},~\ref{app:q2},~\ref{app:q3} e ~\ref{app:q4}.
+Sumário das variáveis estudadas, para cada pergunta de pesquisa, podem ser encontrados nos Apêndices~\ref{app:q1},~\ref{app:q2},~\ref{app:q3} e ~\ref{app:q4}.
 
 % section methods (end)
 
